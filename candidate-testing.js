@@ -9,7 +9,7 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 
-let questions = ["Who was the first American Woman in space? ","True or False: 5 kilometer == 5000 meters? ","(5+3)/2*10 = ? ","Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
+let questions = ['Who was the first American woman in space? ',"True or False: 5 kilometer == 5000 meters? ","(5+3)/2*10 = ? ","Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 
 let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 
@@ -28,7 +28,7 @@ function askQuestion() {
   
 for (let i = 0; i < questions.length; i++){
   candidateAnswers.push(input.question(questions[i]));
-  console.log(`Your Answer: ${candidateAnswers[i]}\n Correct Answer: ${correctAnswers[i]}`)
+  console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`)
 }
 }
 
