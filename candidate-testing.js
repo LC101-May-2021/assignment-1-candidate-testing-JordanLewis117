@@ -43,7 +43,7 @@ function gradeQuiz(candidateAnswers) {
       else ;
   }
   // console.log((grade/5)*100);
-  grade = ((grade1/5)*100);
+  grade = (grade1*20);
   return grade;
 }
 
