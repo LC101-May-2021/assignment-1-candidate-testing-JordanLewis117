@@ -14,7 +14,7 @@ let questions = ['Who was the first American woman in space? ','True or false: 5
 let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 
 let candidateAnswers = [];
-let grade1 = 0;
+let grade = 0;
 
 function askForName() {
  /* // TODO 1.1b: Ask for candidate's name //*/
@@ -37,13 +37,12 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
 
-  let grade = 0;
+  grade = 0;
   for (let i = 0;i<candidateAnswers.length; i++){
-    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) grade1++;
+    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) grade++;
       else ;
   }
   // console.log((grade/5)*100);
-  grade = (grade1*20);
   return grade;
 }
 
@@ -53,13 +52,13 @@ function runProgram() {
 console.log("Welcome to the quiz " + candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
-
-if (grade1 >= 4) {
-  console.log(`>>> Overall Score: ${((grade1/5)*100)}% (${grade1} of 5 responses correct) <<<`);
+console.log(typeof(grade));
+if (grade >= 4) {
+  console.log(`>>> Overall Score: ${((grade/5)*100)}% (${grade} of 5 responses correct) <<<`);
   console.log(">>> Status: Passed! <<<");
 }
 else {
-  console.log(`>>> Overall Score: ${((grade1/5)*100)}% (${grade1} of 5 responses correct) <<<`);
+  console.log(`>>> Overall Score: ${((grade/5)*100)}% (${grade} of 5 responses correct) <<<`);
   console.log(">>> Status: Failed <<<");
 }
 }
