@@ -15,7 +15,7 @@ let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 
 let candidateAnswers = [];
 let grade = 0;
-
+let totalCorrectAnswers = 0;
 function askForName() {
  /* // TODO 1.1b: Ask for candidate's name //*/
     candidateName = input.question("What is your name? ");
@@ -42,6 +42,8 @@ function gradeQuiz(candidateAnswers) {
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) grade++;
       else ;
   }
+  totalCorrectAnswers = grade;
+  grade = ((grade/5)*100);
   // console.log((grade/5)*100);
   return grade;
 }
@@ -54,11 +56,11 @@ console.log("Welcome to the quiz " + candidateName + "!");
   gradeQuiz(this.candidateAnswers);
 console.log(typeof(grade));
 if (grade >= 4) {
-  console.log(`>>> Overall Score: ${((grade/5)*100)}% (${grade} of 5 responses correct) <<<`);
+  console.log(`>>> Overall Score: ${grade}% (${totalCorrectAnswers} of 5 responses correct) <<<`);
   console.log(">>> Status: Passed! <<<");
 }
 else {
-  console.log(`>>> Overall Score: ${((grade/5)*100)}% (${grade} of 5 responses correct) <<<`);
+  console.log(`>>> Overall Score: ${grade}% (${totalCorrectAnswers} of 5 responses correct) <<<`);
   console.log(">>> Status: Failed <<<");
 }
 }
