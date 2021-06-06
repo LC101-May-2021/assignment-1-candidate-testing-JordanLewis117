@@ -14,7 +14,7 @@ let questions = ["Who was the first American Woman in space? ","True or False: 5
 let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 
 let candidateAnswers = [];
-
+let grade1 = 0;
 
 function askForName() {
  /* // TODO 1.1b: Ask for candidate's name //*/
@@ -28,23 +28,21 @@ function askQuestion() {
   
 for (let i = 0; i < questions.length; i++){
   candidateAnswers.push(input.question(questions[i]));
+  console.log(`Your Answer: ${candidateAnswers[i]}\n Correct Answer: ${correctAnswers[i]}`)
 }
- console.log(candidateAnswers);
-
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswers === correctAnswers) {
-    console.log(`Your answers were: ${candidateAnswers}. The correct answers were ${correctAnswers}.`);
-} else {
-      console.log(`Your answer was: ${candidateAnswers}. The correct answer was ${correctAnswers}.`)
-}
 
-  let grade;
-  
 
+  let grade = 0;
+  for (let i = 0;i<candidateAnswers.length; i++){
+    if (candidateAnswers[i].toUpperCase == correctAnswers[i].toUpperCase) grade1++;
+      else ;
+  }
+  console.log((grade/5)*100);
   return grade;
 }
 
@@ -54,8 +52,16 @@ function runProgram() {
 console.log("Welcome to the quiz " + candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
-}
 
+if (grade1 >= 4) {
+  console.log(`>>> Overall Score: ${((grade1/5)*100)}% (${grade1} of 5 responses correct) <<<`);
+  console.log(">>> Status: Passed! <<<");
+}
+else {
+  console.log(`>>> Overall Score: ${((grade1/5)*100)}% (${grade1} of 5 responses correct) <<<`);
+  console.log(">>> Status: Failed <<<");
+}
+}
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
